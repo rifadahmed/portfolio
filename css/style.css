@@ -322,7 +322,9 @@ body {
 }
 .navbar{
 	background-color:#e74c3c !important;
-    padding:15px 20px;
+	padding:15px 20px;
+	width: 100%;
+	z-index: 100;
 }
 .nav-link{
 	color:white !important;
@@ -335,7 +337,25 @@ body {
 .navbar-brand{
 	color:white !important;
 }
-
+.fixedNav #navigation {
+	position: fixed;
+	top: 0;
+}
+#loading {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: #fff;
+	z-index: 1000;
+  }
+  
+  #inner {
+	width: 100%;
+	height: 100%;
+	background:url(../img/load/giphy.gif) center center no-repeat;
+  }
 
 
 

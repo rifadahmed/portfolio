@@ -1,3 +1,12 @@
+
+  $(window).on("load", function() {
+
+	$("#loading #inner").fadeOut(500, function() {
+		$("#loading").fadeOut(750);
+	});
+
+})
+
 $(document).ready(function() {
 
 	$('#slides').superslides({
@@ -102,6 +111,8 @@ $(document).ready(function() {
 		return false;
 	})
 
+	
+
 	$(".navbar a").on('click', function(event) {
 		// Make sure this.hash has a value before overriding default behavior
 		if (this.hash !== "") {
@@ -123,6 +134,29 @@ $(document).ready(function() {
 		}  // End if
 	  });
 
+	  const nav = $("#navigation");
+	  const navTop = nav.offset().top;
+  
+	  $(window).on("scroll", stickyNavigation);
+  
+	  function stickyNavigation() {
+  
+		  var body = $("body");
+  
+		  if($(window).scrollTop() >= navTop) {
+			  body.css("padding-top", nav.outerHeight() + "px");
+			  body.addClass("fixedNav");
+		  }
+		  else {
+			  body.css("padding-top", 0);
+			  body.removeClass("fixedNav");
+		  }
+  
+  
+  
+  
+	  }
+	
 });
 
 
